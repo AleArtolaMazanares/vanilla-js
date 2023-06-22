@@ -31,53 +31,17 @@ function ObtenerApi() {
 }
 
 function Promesa() {
-  return new Promise((resolv) => {
-    setTimeout(() => {
-      resolv(`lista1 ${ObtenerApi()}`);
-    }, 1000);
-  });
-}
-
-function Promesa2() {
-  return new Promise((resolver) => {
+  indentificador = new Promise((resolver) => {
     setTimeout(() => {
       resolver(ObtenerApi());
-    }, 4000);
+    }, 1000);
   });
+  return indentificador;
 }
 
 async function Users() {
-  const Esperar = await Promesa();
+  const usuarios = await Promesa();
   console.log("tu lista de api");
 }
 
-async function Users2() {
-  const users = await Promesa2();
-  console.log("tu lista de api 2");
-}
-
-Users(Users2());
-// function usuarios() {
-//   return new Promise((resolver) => {
-//     setTimeout(() => {
-//       resolver(ObtenerUsuariosApi());
-//     }, 3000);
-//   });
-// }
-
-// async function USers() {
-//   const USers = await usuarios();
-//   console.log(USers);
-// }
-
-// USers();
-
-// let promesa = CrearRegalo();
-
-// promesa
-//   .then(function (dato) {
-//     console.log("abrir regalo", dato);
-//   })
-//   .catch(function (razon) {
-//     console.log("no recibe nada", razon);
-//   });
+Users();
