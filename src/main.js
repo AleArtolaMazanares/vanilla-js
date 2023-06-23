@@ -52,7 +52,7 @@ function numerosDivisibles(n1) {
   return 1;
 }
 
-let divisibles = [40, 10, 15].filter(numerosDivisibles);
+let divisibles = [40, 15, 15].filter(numerosDivisibles);
 
 // funcion pares
 
